@@ -9,13 +9,21 @@
       </style>
       <script language="Javascript" >
          function download() {
-           var output = "#sit " + document.getElementById("sit").value +
+           var output = "#num " + document.getElementById("num").value +
+           "\n\n#sit " + document.getElementById("sit").value +
            "\n\n#lob " + document.getElementById("lob").value +
            "\n\n#why " + document.getElementById("why").value +
            "\n\n#iss " + document.getElementById("iss").value +
            "\n\n#fix " + document.getElementById("fix").value +
            "\n\n#act " + document.getElementById("act").value;
            document.getElementById('output').value = output;
+           document.getElementById('num').value = "";
+           document.getElementById('sit').value = "";
+           document.getElementById('lob').value = "";
+           document.getElementById('why').value = "";
+           document.getElementById('iss').value = "";
+           document.getElementById('fix').value = "";
+           document.getElementById('act').value = "";
          }
          function update()
          {
@@ -128,6 +136,10 @@
       <div id="A">
          <p>Please fill the form completely</p>
          <br>
+         What is the chat number
+         <br>
+         <textarea rows=1 cols=50 id="num"></textarea>
+         <br>
          What is the site
          <br>
          <textarea rows=1 cols=50 id="sit"></textarea>
@@ -139,6 +151,8 @@
          Reason for Chat
          <br>
          <select id="why" name="why" onChange="whyUpdate()">
+            <option value="" selected disabled hidden>                   </option>
+            <option value="Escalate to Tier 3">Escalate to Tier 3</option>
             <option value="Avaya">Avaya</option>
             <option value="Azure VPN">Azure VPN</option>
             <option value="Bulk Password">Bulk Password</option>
@@ -156,11 +170,13 @@
          Issue
          <br>
          <select id="iss" name="iss">
+
          </select>
          <br>
          Solution
          <br>
          <select id="fix" name="fix">
+            <option value="" selected disabled hidden>                   </option>
             <option value="Escalate to Tier 3">Escalate to Tier 3</option>
             <option value="Escalate to Unified Communications">Escalate to Unified Communications</option>
             <option value="PW Reset">PW Reset</option>
@@ -173,7 +189,7 @@
          <br>
          What were your troubleshooting steps
          <br>
-         <textarea rows=10 cols=50 id="act">What were your troubleshooting steps</textarea>
+         <textarea rows=10 cols=50 id="act"></textarea>
          <br>
          <input type="button" onClick="download()" value="Submit">
          <br>
