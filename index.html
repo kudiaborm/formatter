@@ -1,49 +1,182 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-form * {
-  display: block;
-  margin: 10px;
-}
-</style>
-<script language="Javascript" >
-function download() {
-  var output = "#why " + document.getElementById("why").value + "\n\n#act " + document.getElementById("act").value + "\n\n#fix " + document.getElementById("fix").value;
-  document.getElementById('output').value = output;
-}
-function update()
-{
-  if (document.getElementById("pw").checked){
-    document.getElementById("A").style.visibility="hidden";
-    document.getElementById("B").style.visibility="visible";    
-  }
-  else{
-    document.getElementById("B").style.visibility="hidden";
-    document.getElementById("A").style.visibility="visible";
-  }
-}
-</script>
-</head>
-<body>Show : 
-<input type="checkbox"  id="pw" name="aorb" onChange="update()"> Is this a password reset?
-<div id="A">
-<p>Please fill the form completely</p>
-<br>
-<textarea rows=1 cols=50 id="why">What is the issue</textarea>
-<br>
-<textarea rows=5 cols=50 id="act">Step 1.
-Step 2.
-Step 3.</textarea>
-<br>
-<textarea rows=1 cols=50 id="fix">What was the resolution</textarea>
-<br>
-<input type="button" onClick="download()" value="Submit">
-<br>
+   <head>
+      <style>
+         form * {
+         display: block;
+         margin: 10px;
+         }
+      </style>
+      <script language="Javascript" >
+         function download() {
+           var output = "#sit " + document.getElementById("sit").value +
+           "\n\n#lob " + document.getElementById("lob").value +
+           "\n\n#why " + document.getElementById("why").value +
+           "\n\n#iss " + document.getElementById("iss").value +
+           "\n\n#fix " + document.getElementById("fix").value +
+           "\n\n#act " + document.getElementById("act").value;
+           document.getElementById('output').value = output;
+         }
+         function update()
+         {
+           if (document.getElementById("pw").checked){
+             document.getElementById("A").style.visibility="hidden";
+             document.getElementById("B").style.visibility="visible";    
+           }
+           else{
+             document.getElementById("B").style.visibility="hidden";
+             document.getElementById("A").style.visibility="visible";
+           }
+         }
+         function whyUpdate() {
+             if ( document.getElementById("why").value == "Avaya" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Distorted Audio">Distorted Audio</option>\
+                     <option value="One Way Audio">One Way Audio</option>\
+                     <option value="Call Dropping">Call Dropping</option>\
+                     <option value="Login Issue">Login Issue</option>\
+                     <option value="Incorrect Settings">Incorrect Settings</option>\
+                     <option value="Transfer Issues">Transfer Issues</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "Azure VPN" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="XML Issue">XML Issue</option>\
+                     <option value="Incorrect Time">Incorrect Time</option>\
+                     <option value="Password Resets">Password Resets</option>\
+                     <option value="2FA Issue">2FA Issue</option>\
+                     <option value="Installation Issue">Installation Issue</option>\
+                     <option value="VPN Client Connection Trigger">VPN Client Connection Trigger</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "Bulk Password" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Password">Password</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "Cisco Phone" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Distorted Audio">Distorted Audio</option>\
+                     <option value="One Way Audio">One Way Audio</option>\
+                     <option value="Call Dropping">Call Dropping</option>\
+                     <option value="Login Issue">Login Issue</option>\
+                     <option value="Incorrect Settings">Incorrect Settings</option>\
+                     <option value="Transfer Issues">Transfer Issues</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "Cisco VPN" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="XML File Issue">XML File Issue</option>\
+                     <option value="Incorrect Time">Incorrect Time</option>\
+                     <option value="Password Issue">Password Issue</option>\
+                     <option value="2FA/MFA Issue">2FA/MFA Issue</option>\
+                     <option value="Installation Issue">Installation Issue</option>\
+                     <option value="VPN Cnnection Trigger">VPN Cnnection Trigger</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "Forti VPN" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Invalid Remote Gateway">Invalid Remote Gateway</option>\
+                     <option value="Installation Issues">Installation Issues</option>\
+                     <option value="Credential Issues">Credential Issues</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "Pure Cloud" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Unable to Connect">Unable to Connect</option>\
+                     <option value="Credential Issuess">Credential Issuess</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "OS" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Permission Issues">Permission Issues</option>\
+                     <option value="Credential Issuess">Credential Issuess</option>\
+                     <option value="Unbable to Update">Unbable to Update</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "RDC" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Unable to Connect">Unable to Connect</option>\
+                     <option value="Credential Issuess">Credential Issuess</option>\
+                     <option value="Other">Other</option>\
+                     ';
+              } else if ( document.getElementById("why").value == "UPC" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Unable to Connect">Unable to Connect</option>\
+                     <option value="Credential Issuess">Credential Issuess</option>\
+                     <option value="Other">Other</option>\
+                     ';
+             } else if ( document.getElementById("why").value == "Other" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Other">Other</option>\
+                     ';
+            } else if ( document.getElementById("why").value == "Disconnect" ) {
+                 document.getElementById("iss").innerHTML = '\
+                     <option value="Disconnect">Disconnect</option>\
+                     ';
+             } else {
+                 document.getElementById("iss").innerHTML = '\
+                 <option value="ERROR">ERROR</option>\
+                 ';
+             }
+         }
 
-<textarea rows=10 cols=50 id="output"></textarea></div>
-<div style="position: absolute; left: 10px; top: 100px; visibility:hidden" id="B"><br/>
-<p>Copy the following into your work note</p>
-<textarea>#PWRESET</textarea></div>
-</body>
+      </script>
+   </head>
+   <body>
+      VPN Avengers Chat Work Note Generator 
+      <!-- <input type="checkbox"  id="pw" name="aorb" onChange="update()"> Is this a password reset? -->
+      <div id="A">
+         <p>Please fill the form completely</p>
+         <br>
+         <textarea rows=1 cols=50 id="sit">What is the site</textarea>
+         <br>
+         <textarea rows=1 cols=50 id="lob">What is the LOB</textarea>
+         <br>
+         <select id="why" name="why" onChange="whyUpdate()">
+            <option value="" selected disabled hidden>Reason for Chat</option>
+            <option value="Avaya">Avaya</option>
+            <option value="Azure VPN">Azure VPN</option>
+            <option value="Bulk Password">Bulk Password</option>
+            <option value="Cisco Phone">Cisco Phone</option>
+            <option value="Cisco VPN">Cisco VPN</option>
+            <option value="Forti VPN">Forti VPN</option>
+            <option value="Pure Cloud">Pure Cloud</option>
+            <option value="OS">OS</option>
+            <option value="RDC">RDC</option>
+            <option value="UPC">UPC</option>
+            <option value="Other">Other</option>
+            <option value="Disconnect">Disconnect</option>
+         </select>
+         <br>
+         <select id="iss" name="iss">
+            <option value="" selected disabled hidden>Issue</option>
+
+         </select>
+         <br>
+         <select id="fix" name="fix">
+            <option value="" selected disabled hidden>Solution</option>
+            <option value="Escalate to Tier 3">Escalate to Tier 3</option>
+            <option value="Escalate to Unified Communications">Escalate to Unified Communications</option>
+            <option value="PW Reset">PW Reset</option>
+            <option value="Corrected Configuration Settings">Corrected Configuration Settings</option>
+            <option value="Hardware Issue Limitation">Hardware Issue Limitation</option>
+            <option value="CLient-Related Issue">CLient-Related Issue</option>
+            <option value="Network Issue/Limitation">Network Issue/Limitation</option>
+            <option value="Other">Other</option>
+         </select>
+         <br>
+         <textarea rows=10 cols=50 id="act">What were your troubleshooting steps</textarea>
+         <br>
+         <input type="button" onClick="download()" value="Submit">
+         <br>
+         <textarea rows=10 cols=50 id="output"></textarea>
+      </div>
+      <div style="position: absolute; left: 10px; top: 100px; visibility:hidden" id="B">
+         <br/>
+         <p>Copy the following into your work note</p>
+         <textarea>#PWRESET</textarea>
+      </div>
+   </body>
 </html>
+
+
