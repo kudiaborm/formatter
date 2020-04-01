@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+form * {
+  display: block;
+  margin: 10px;
+}
+</style>
+<script language="Javascript" >
+function download() {
+  var output = document.getElementById("why").value;
+  document.getElementById('output').value = output;
+}
+function update()
+{
+  if (document.getElementById("pw").checked){
+    document.getElementById("A").style.visibility="hidden";
+    document.getElementById("B").style.visibility="visible";    
+  }
+  else{
+    document.getElementById("B").style.visibility="hidden";
+    document.getElementById("A").style.visibility="visible";
+  }
+}
+</script>
+</head>
+<body>Show : 
+<input type="checkbox"  id="pw" name="aorb" onChange="update()"> Is this a password reset?
+<div id="A">
+
+<form onsubmit="download()">
+  <p>Please fill the form completely</p>
+  <textarea rows=1 cols=50 id="why">What is the issue</textarea>
+  <textarea rows=5 cols=50 name="act">Step 1.
+  Step 2.
+  Step 3.</textarea>
+  <textarea rows=1 cols=50 name="fix">What was the resolution</textarea>
+  <input type="submit" value="Submit">
+</form>
+<textarea rows=10 cols=50 id="output"></textarea></div>
+<div style="position: absolute; left: 10px; top: 100px; visibility:hidden" id="B"><br/>
+<p>Copy the following into your work note</p>
+<textarea>#PWRESET</textarea></div>
+</body>
+</html>
