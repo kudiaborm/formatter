@@ -128,12 +128,17 @@
       <div id="A">
          <p>Please fill the form completely</p>
          <br>
-         <textarea rows=1 cols=50 id="sit">What is the site</textarea>
+         What is the site
          <br>
-         <textarea rows=1 cols=50 id="lob">What is the LOB</textarea>
+         <textarea rows=1 cols=50 id="sit"></textarea>
+         <br>
+         What is the LOB
+         <br>
+         <textarea rows=1 cols=50 id="lob"></textarea>
+         <br>
+         Reason for Chat
          <br>
          <select id="why" name="why" onChange="whyUpdate()">
-            <option value="" selected disabled hidden>Reason for Chat</option>
             <option value="Avaya">Avaya</option>
             <option value="Azure VPN">Azure VPN</option>
             <option value="Bulk Password">Bulk Password</option>
@@ -148,13 +153,14 @@
             <option value="Disconnect">Disconnect</option>
          </select>
          <br>
+         Issue
+         <br>
          <select id="iss" name="iss">
-            <option value="" selected disabled hidden>Issue</option>
-
          </select>
          <br>
+         Solution
+         <br>
          <select id="fix" name="fix">
-            <option value="" selected disabled hidden>Solution</option>
             <option value="Escalate to Tier 3">Escalate to Tier 3</option>
             <option value="Escalate to Unified Communications">Escalate to Unified Communications</option>
             <option value="PW Reset">PW Reset</option>
@@ -164,6 +170,8 @@
             <option value="Network Issue/Limitation">Network Issue/Limitation</option>
             <option value="Other">Other</option>
          </select>
+         <br>
+         What were your troubleshooting steps
          <br>
          <textarea rows=10 cols=50 id="act">What were your troubleshooting steps</textarea>
          <br>
