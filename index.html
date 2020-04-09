@@ -23,7 +23,16 @@
            document.getElementById('why').value = "";
            document.getElementById('iss').value = "";
            document.getElementById('fix').value = "";
-           document.getElementById('act').value = "";
+           document.getElementById('act').value = "ISP -\
+Speed ( Request they press go here then press copy link http://speedtest.skytap.com/ )-\
+BYOD -\
+Avaya Location -\
+VPN -\
+\
+Actions performed\
+- Step 1\
+- Step 2\
+- Step 3";
          }
          function update()
          {
@@ -103,9 +112,10 @@
                      ';
              } else if ( document.getElementById("why").value == "RDC" ) {
                  document.getElementById("iss").innerHTML = '\
-                     <option value="Unable to Connect">Unable to Connect</option>\
-                     <option value="Credential Issuess">Credential Issuess</option>\
-                     <option value="Other">Other</option>\
+                     <option value="Unable to Connect">Incorrect Hostname</option>\
+                     <option value="Credential Issuess">Incorrect Domain</option>\
+                     <option value="Credential Issuess">Username Resolution</option>\
+                     <option value="Other">Username Resolution</option>\
                      ';
               } else if ( document.getElementById("why").value == "UPC" ) {
                  document.getElementById("iss").innerHTML = '\
@@ -182,7 +192,7 @@
             <option value="PW Reset">PW Reset</option>
             <option value="Corrected Configuration Settings">Corrected Configuration Settings</option>
             <option value="Hardware Issue Limitation">Hardware Issue Limitation</option>
-            <option value="CLient-Related Issue">CLient-Related Issue</option>
+            <option value="Client-Related Issue">CLient-Related Issue</option>
             <option value="Network Issue/Limitation">Network Issue/Limitation</option>
             <option value="Other">Other</option>
          </select>
@@ -190,10 +200,15 @@
          What were your troubleshooting steps
          <br>
          <textarea rows=10 cols=50 id="act">ISP -
-Speed -
+Speed ( Request they press go here then press copy link http://speedtest.skytap.com/ )-
 BYOD -
 Avaya Location -
-VPN -</textarea>
+VPN -
+
+Actions performed
+- Step 1
+- Step 2
+- Step 3</textarea>
          <br>
          <input type="button" onClick="download()" value="Submit">
          <br>
