@@ -7,6 +7,7 @@
          margin: 10px;
          }
       </style>
+      <link rel="stylesheet" type="text/css" href="theme.css">
       <script language="Javascript" >
          function download() {
            var output = "#num " + document.getElementById("num").value +
@@ -16,7 +17,13 @@
            "\n\n#iss " + document.getElementById("iss").value +
            "\n\n#fix " + document.getElementById("fix").value +
            "\n\n#act " + document.getElementById("act").value;
+
+
            document.getElementById('output').value = output;
+           document.getElementById('output').select();
+           document.execCommand('copy');
+           snackbarIt();
+
            document.getElementById('num').value = "";
            document.getElementById('sit').value = "";
            document.getElementById('lob').value = "";
@@ -137,7 +144,16 @@ Actions performed\n\
                  ';
              }
          }
+    function snackbarIt() {
+      // Get the snackbar DIV
+      var x = document.getElementById("snackbar");
 
+      // Add the "show" class to DIV
+      x.className = "show";
+
+      // After 3 seconds, remove the show class from DIV
+      setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+    }
       </script>
    </head>
    <body>
@@ -210,10 +226,11 @@ Actions performed
 - Step 2
 - Step 3</textarea>
          <br>
-         <input type="button" onClick="download()" value="Submit"> - Copy the below form to your work notes
+         <input type="button" onClick="download()" value="Generate and Copy to Clipboard">
          <br>
          <textarea rows=10 cols=50 id="output"></textarea>
       </div>
+      <div id="snackbar">Work Note Copied</div>
       <div style="position: absolute; left: 10px; top: 100px; visibility:hidden" id="B">
          <br/>
          <p>Copy the following into your work note</p>
