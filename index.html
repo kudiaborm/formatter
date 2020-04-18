@@ -7,8 +7,12 @@
          margin: 10px;
          }
       </style>
-      <link rel="stylesheet" type="text/css" href="theme.css">
       <link rel="stylesheet" href="https://use.typekit.net/qtr4fgy.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="theme.css">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       <script language="Javascript" >
          function download() {
            var output = "#sit " + document.getElementById("sit").value +
@@ -147,18 +151,18 @@ Actions performed\n\
     }
       </script>
    </head>
-   <body>
+   <body id="main">
       <!-- <input type="checkbox"  id="pw" name="aorb" onChange="update()"> Is this a password reset? -->
     <p id="title">VPN Avengers Chat Work Note Generator</p>
     <br>
       <div class="row">
-      <div id="logger" class="column">
+      <div id="logger" class="col">
          <p>Please fill out the form completely</p>
          <br>
         <p>What is the site</p>
-         <textarea rows=1 cols=50 id="sit"></textarea>
+         <textarea rows=1 cols=60 id="sit"></textarea>
          <p>What is the LOB</p>
-         <textarea rows=1 cols=50 id="lob"></textarea>
+         <textarea rows=1 cols=60 id="lob"></textarea>
          <p>Reason for Chat</p>
          <select id="why" name="why" onChange="whyUpdate()">
             <option value="" selected disabled hidden>                   </option>
@@ -193,7 +197,7 @@ Actions performed\n\
             <option value="Other">Other</option>
          </select>
          <p>What were your troubleshooting steps</p>
-         <textarea rows=10 cols=50 id="act">ISP -
+         <textarea rows=10 cols=60 id="act">ISP -
 Speed ( Request they press go here then press copy link http://speedtest.skytap.com/ )-
 BYOD (Personal PC?) -
 Avaya Location (Remote or Personal?) -
@@ -206,9 +210,9 @@ Actions performed
          <br>
          <input type="button" onClick="download()" value="Generate and Copy to Clipboard">
          <br>
-         <textarea rows=30 cols=50 id="output"></textarea>
+         <textarea rows=30 cols=60 id="output"></textarea>
       </div>
-      <div class="column">
+      <div class="col">
       <p>Useful Links and Knowledgebase Articles</p>
       <a href="https://alorica.service-now.com/$pa_dashboard.do?sysparm_dashboard=6bfe9738db5450d86599d48a48961984">My Active Chat Numbers</a>
       <br>
