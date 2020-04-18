@@ -60,6 +60,10 @@ textarea {
   color: white;
 }
 
+body {
+  margin: 0;
+}
+
 select {
   background-color: #004d40;
   -webkit-border-radius: 5px;
@@ -81,7 +85,16 @@ p {
   font-style: normal;
 }
 
-div {
+#title {
+  text-align:   center;
+  font-weight:  400;
+  font-size: 1.25em;
+  margin: 0;
+  padding: 5px;
+  background-color:#944444;
+}
+
+div #logger {
   text-align: center;
 }
 
@@ -111,4 +124,25 @@ input {
   padding: 8px;
   border-radius: 5px;
   margin: 5px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  color: #ff8a8a;
+  margin: 5px;
+  line-height: 1.1em;
+  font-family: laca-text, sans-serif;
+  font-weight: 200;
+  font-style: normal;
 }
